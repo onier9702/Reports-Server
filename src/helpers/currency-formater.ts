@@ -1,0 +1,11 @@
+
+export class CurrencyFormater {
+
+    static formatCurrency(value: number): string {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'CRC',
+        }).format(value);
+    }
+
+}

@@ -13,15 +13,14 @@ import {
 @Injectable()
 export class BasicReportsService extends PrismaClient implements OnModuleInit {
 
+    async onModuleInit() {
+        await this.$connect();
+    }
+    
     constructor(
         private readonly printerService: PrinterService,
     ) {
         super();
-    }
-
-    async onModuleInit() {
-        await this.$connect();
-        console.log('connected to the database');
     }
 
     getOne(): PDFKit.PDFDocument {
