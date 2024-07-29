@@ -10,6 +10,14 @@ const logo: Content = {
   margin: [0, 0, 0, 20],
 };
 
+const currentDate: Content = {
+  text: DateFormatter.getDDMMMMYYYY(new Date()),
+  alignment: 'right',
+  margin: [20, 20],
+  bold: true,
+  width: 150,
+};
+
 interface HeaderOptions {
   title?: string;
   subTitle?: string;
@@ -21,24 +29,46 @@ export const headerSection = (options: HeaderOptions): Content => {
   const { title, subTitle, showLogo = true, showDate = true } = options;
 
   const headerLogo: Content = showLogo ? logo : null;
-  const headerDate: Content = showDate
-    ? {
-        text: DateFormatter.getDDMMMMYYYY(new Date()),
-        alignment: 'right',
-        margin: [20, 20],
-      }
-    : null;
-
-  const headerTitle: Content = title
-    ? {
-        text: title,
-        style: {
-          bold: true,
-        },
-      }
-    : null;
+  const headerTitle: Content = title ? buildHeaderTitle(title, subTitle) : null;
+  const headerDate: Content = showDate ? currentDate : null;
 
   return {
     columns: [headerLogo, headerTitle, headerDate],
   };
 };
+
+const buildHeaderTitle = (
+  title: string,
+  subtitle: string|null,
+): Content => {
+  const titleContent: Content = {
+    stack: [
+      {
+        text: title,
+        alignment: 'center',
+        margin: [0, 15, 0, 0],
+        style: {
+          bold: true,
+          fontSize: 22,
+        },
+      },
+      
+      subtitle ? buildHeaderSubtitle(subtitle) : null,
+      
+    ],
+  };
+
+  return titleContent;
+}
+
+const buildHeaderSubtitle = (subtitle: string): Content => {
+  return {
+    text: subtitle,
+    alignment: 'center',
+    margin: [0, 2, 0, 0],
+    style: {
+      bold: true,
+      fontSize: 16,
+    },
+  };
+}
