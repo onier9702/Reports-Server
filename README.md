@@ -26,6 +26,12 @@
 7. Make colors with opacity (Not necessary)
 ```npm i @kurkle/color```
 
+8. Html to pdfMake
+```npm i html-to-pdfmake```
+
+9. Jsdom
+```npm i jsdom```
+
 ## Execute development environment to launch the server
 1. Clone the repository if it is new
 2. Install dependencies `npm i`
