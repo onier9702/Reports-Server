@@ -25,14 +25,14 @@ export class BasicReportsService extends PrismaClient implements OnModuleInit {
 
     getOne(): PDFKit.PDFDocument {
         const docDefinition = getHelloWorldReport();
-        var doc = this.printerService.createPdf(docDefinition);
+        const doc = this.printerService.createPdf(docDefinition);
 
         return doc;
     }
 
     employmentLetter(): PDFKit.PDFDocument {
         const docDefinition = getEmploymentLetterReport();
-        var doc = this.printerService.createPdf(docDefinition);
+        const doc = this.printerService.createPdf(docDefinition);
 
         return doc;
     }
@@ -58,7 +58,7 @@ export class BasicReportsService extends PrismaClient implements OnModuleInit {
             employeeWorkSchedule: employee.work_schedule,
             employerCompany: 'Reino Digital Corp.',
         });
-        var doc = this.printerService.createPdf(docDefinition);
+        const doc = this.printerService.createPdf(docDefinition);
 
         return doc;
     }

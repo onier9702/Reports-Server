@@ -4,7 +4,7 @@ import { DateFormatter } from '../../helpers/index';
 
 const logo: Content = {
   image: 'src/assets/tucan-code-logo.png',
-  width: 100,
+  width: 120,
   height: 100,
   alignment: 'center',
   margin: [0, 0, 0, 20],
@@ -15,7 +15,7 @@ const currentDate: Content = {
   alignment: 'right',
   margin: [20, 20],
   bold: true,
-  width: 150,
+  width: 120,
 };
 
 interface HeaderOptions {

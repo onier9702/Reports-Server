@@ -20,6 +20,12 @@
 5. Install pdfMake to create reports
 ```npm i pdfmake```
 
+6. Axios
+```npm i axios```
+
+7. Make colors with opacity (Not necessary)
+```npm i @kurkle/color```
+
 ## Execute development environment to launch the server
 1. Clone the repository if it is new
 2. Install dependencies `npm i`
